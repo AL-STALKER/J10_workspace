@@ -37,6 +37,15 @@ public class addDB {
 				double minsum = rs.getDouble(3);
 				System.out.println(nm + "   " + p + "\t" + minsum);
 			}
+			
+			String sql = "INSERT INTO customer (name, address, "; 
+			sql += " email, ccNo, ccType, maturity) values(";
+			sql += " 'Clar Nelis', 'Vosselaar st. 19, Trnaut, Belgium', "; 
+			sql += " 'Clar@adw.com', 	'11345694671231', ";
+			sql += " 'MasterCard', '2014-07-31') ";
+			Statement stmtIns = con.createStatement();
+			stmtIns.executeUpdate(sql);
+
 			con.close();
 
 			}
