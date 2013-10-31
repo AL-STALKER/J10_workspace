@@ -9,11 +9,12 @@ public class addDB {
 			Connection con = DriverManager.getConnection("jdbc:derby:C:\\Users\\oper4\\J10_workspace\\CM");
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(
-					"SELECT name, charge FROM merchant");
+					"SELECT name, charge, minsum FROM merchant WHERE minsum > 100");
 			while (rs.next()){
 				String nm = rs.getString("name");
 				double p = rs.getDouble(2);
-				System.out.println(nm + "   " + p);
+				double minsum = rs.getDouble(3);
+				System.out.println(nm + "   " + p + "\t" + minsum);
 			}
 			con.close();
 
