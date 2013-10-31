@@ -1,0 +1,1 @@
+DBConnectionString = jdbc:derby:C:\\Users\\oper4\\J10_workspace\\CM
